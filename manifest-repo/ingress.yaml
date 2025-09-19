@@ -4,6 +4,7 @@ metadata:
   name: chat-app
   annotations:
     kubernetes.io/ingress.class: nginx
+  namespace: chat-app
 spec:
   rules:
     - host: REPLACE_WITH_DOMAIN

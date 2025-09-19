@@ -5,6 +5,7 @@ metadata:
   labels:
     app: chat-app
     tier: frontend
+  namespace: chat-app
 spec:
   type: ClusterIP
   selector:
@@ -23,6 +24,7 @@ metadata:
   labels:
     app: chat-app
     tier: backend
+  namespace: chat-app
 spec:
   type: ClusterIP
   selector:
