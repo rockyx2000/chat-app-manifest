@@ -6,6 +6,9 @@ metadata:
     kubernetes.io/ingress.class: nginx
   namespace: chat-app
 spec:
+  selector:
+    name: nginx-ingress-microk8s
+  type: LoadBalancer
   rules:
     - host: chatapp.rkapp.net
       http:
