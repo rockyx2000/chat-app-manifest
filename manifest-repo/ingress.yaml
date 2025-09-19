@@ -31,8 +31,3 @@ spec:
                 name: chat-backend
                 port:
                   number: 80
-  # tls:
-  #   - hosts:
-  #       - REPLACE_WITH_DOMAIN
-  #     secretName: REPLACE_WITH_TLS_SECRET
-
