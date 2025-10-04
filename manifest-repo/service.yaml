@@ -7,7 +7,6 @@ metadata:
     tier: frontend
   namespace: chat-app
 spec:
-  nodeName: k8s-worker
   type: ClusterIP
   selector:
     app: chat-app
@@ -27,7 +26,6 @@ metadata:
     tier: backend
   namespace: chat-app
 spec:
-  nodeName: k8s-worker
   type: ClusterIP
   selector:
     app: chat-app
