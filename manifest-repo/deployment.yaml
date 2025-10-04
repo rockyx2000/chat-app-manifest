@@ -24,7 +24,7 @@ spec:
         - name: frontend
           # chat-app/app/frontend の Dockerfile からビルドしたイメージ
           # Updated: 2025-10-04 - Added Socket.IO proxy support
-          image: ghcr.io/rockyx2000/chat-frontend:sha-ad3b333
+          image: ghcr.io/rockyx2000/chat-frontend:sha-ea91993
           ports:
             - containerPort: 80
           resources:
@@ -60,7 +60,7 @@ spec:
       containers:
         - name: backend
           # chat-app/app/backend の Dockerfile からビルドしたイメージ
-          image: ghcr.io/rockyx2000/chat-backend:sha-ad3b333
+          image: ghcr.io/rockyx2000/chat-backend:sha-ea91993
           ports:
             - containerPort: 8080
           env:
