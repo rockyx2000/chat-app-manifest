@@ -57,6 +57,16 @@ spec:
     spec:
       imagePullSecrets:
         - name: ghcr-pull-secret
+      initContainers:
+        - name: migrate
+          image: ghcr.io/rockyx2000/chat-backend:sha-1dfd8ba
+          command: ["sh", "-c", "npx prisma migrate deploy"]
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DATABASE_URL
       containers:
         - name: backend
           # chat-app/app/backend の Dockerfile からビルドしたイメージ
@@ -66,6 +76,11 @@ spec:
           env:
             - name: BACKEND_PORT
               value: "8080"
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DATABASE_URL
           resources:
             requests:
               cpu: 50m
