@@ -27,6 +27,7 @@ metadata:
   namespace: chat-app
 spec:
   type: ClusterIP
+  sessionAffinity: ClientIP
   selector:
     app: chat-app
     tier: backend
