@@ -40,3 +40,27 @@ spec:
                 name: chat-backend
                 port:
                   number: 80
+    # IPアドレスでのアクセス用（hostなし）
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: chat-frontend
+                port:
+                  number: 80
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: chat-backend
+                port:
+                  number: 80
+          - path: /socket.io
+            pathType: Prefix
+            backend:
+              service:
+                name: chat-backend
+                port:
+                  number: 80
