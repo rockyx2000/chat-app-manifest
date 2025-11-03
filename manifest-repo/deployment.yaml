@@ -24,7 +24,7 @@ spec:
         - name: frontend
           # chat-app/app/frontend の Dockerfile からビルドしたイメージ
           # Updated: 2025-10-04 - Added Socket.IO proxy support
-          image: ghcr.io/rockyx2000/chat-frontend:sha-f720ca7
+          image: ghcr.io/rockyx2000/chat-frontend:sha-bd10f56
           ports:
             - containerPort: 80
           resources:
@@ -59,7 +59,7 @@ spec:
         - name: ghcr-pull-secret
       initContainers:
         - name: migrate
-          image: ghcr.io/rockyx2000/chat-backend:sha-f720ca7
+          image: ghcr.io/rockyx2000/chat-backend:sha-bd10f56
           command: ["sh", "-c", "npx prisma migrate deploy"]
           env:
             - name: DATABASE_URL
@@ -70,7 +70,7 @@ spec:
       containers:
         - name: backend
           # chat-app/app/backend の Dockerfile からビルドしたイメージ
-          image: ghcr.io/rockyx2000/chat-backend:sha-f720ca7
+          image: ghcr.io/rockyx2000/chat-backend:sha-bd10f56
           ports:
             - containerPort: 8080
           env:
